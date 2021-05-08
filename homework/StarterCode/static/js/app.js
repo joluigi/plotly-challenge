@@ -49,9 +49,19 @@ d3.json("samples.json").then(
           x: otuIds,
           y: sValues,
           mode: 'markers',
-          
+          marker:{
+            size: sValues,
+            color: otuIds
+            }
+          }
 
-          }]
+          let dataBub = [bubbleTrace];
+
+          let layoutBub = { 
+            title: `Otus find in Belly button`,
+          }
+
+          Plotly.newPlot("bubble", dataBub, layoutBub );
         }
 
 
@@ -59,8 +69,7 @@ d3.json("samples.json").then(
 
 
 
-    });
-}     
+)}     
 
 );
 
